@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/styles.css">
-  <title>GameHub - <%= post.otsikko %></title>
+  <title>GameHub</title>
 </head>
 <body>
-  <%- include('partials/navbar') %>
+  <%- include('partials/navbar') %>  <!-- Sisällytetään navbar kaikilla toiminnoilla -->
   <div class="container mt-4">
-    <h1><%= post.otsikko %></h1>
-    <img src="<%= post.kuvanUrl %>" class="img-fluid" alt="<%= post.otsikko %>">
-    <p><%= post.sisalto %></p>
+    <div class="row">
+      <div class="col">
+        <h1>Tervetuloa GameHub Blogiin!</h1>
+        <p>Tässä on ensimmäinen blogikirjoitukseni...</p>
+      </div>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

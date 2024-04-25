@@ -1,25 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-darklight">
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>GameHub</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">GameHub</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/">GameHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Koti</a>
+          <a class="nav-link active" aria-current="page" href="/">Koti</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/kirjoitukset">Kirjoitukset</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Yhteystiedot</a>
+          <a class="nav-link" href="/yhteystiedot">Yhteystiedot</a>
         </li>
-      </ul> 
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <% if (locals.username) { %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tervetuloa, <%= locals.username %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/logout">Kirjaudu ulos</a></li>
+            </ul>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Kirjaudu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Rekisteröidy</a>
+          </li>
+        <% } %>
+      </ul>
     </div>
   </div>
 </nav>
+</body>
+</html>

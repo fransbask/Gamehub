@@ -1,4 +1,3 @@
-// models/Post.js
 import mongoose from 'mongoose';
 
 const PostSchema = new mongoose.Schema({
@@ -8,7 +7,7 @@ const PostSchema = new mongoose.Schema({
   kuvanUrl: String,
   luotu: {
     type: Date,
-    default: new Date()
+    default: Date.now
   }
 });
 

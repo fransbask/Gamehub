@@ -14,6 +14,16 @@
       <div class="col">
         <h1>Tervetuloa GameHub Blogiin!</h1>
         <p>Tässä on ensimmäinen blogikirjoitukseni...</p>
+        <h2>Viimeisimmät postaukset:</h2>
+        <ul>
+          <% posts.forEach(post => { %>
+            <li>
+              <h3><%= post.otsikko %></h3>
+              <p><%= post.kuvaus %></p>
+              <p><%= post.sisalto %></p>
+            </li>
+          <% }); %>
+        </ul>
       </div>
     </div>
   </div>
