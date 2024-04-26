@@ -139,27 +139,18 @@ app.get('/posts', async (req, res) => {
   }
 });
 
-// Reitti kirjoitusten sivulle
-// app.get('/kirjoitukset', async (req, res) => {
-//   try {
-//     const posts = await Post.find();
-//     res.render('kirjoitukset', { title: 'Kirjoitukset', posts: posts });
-//   } catch (error) {
-//     console.error('Virhe haettaessa postauksia:', error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
+ //Reitti kirjoitusten sivulle
+  app.get('/kirjoitukset', async (req, res) => {
+    try {
+      const posts = await Post.find();
+       res.render('kirjoitukset', { title: 'Kirjoitukset', posts: posts });
+      } catch (error) {
+        console.error('Virhe haettaessa postauksia:', error);
+         res.status(500).json({ error: 'Internal Server Error' });
+        }
+      });
 
-app.get('/kirjoitukset', (req, res) => {
-  Post.find().sort({ aika: -1 })
-    .then((posts) => {
-      res.render('kirjoitukset', { posts: posts });
-    })
-    .catch((error) => {
-      console.error('Virhe haettaessa postauksia:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    });
-});
+
 
 // Käsittely uuden kirjoituksen lähettämiseen
 app.post('/posts', isAuthenticated, async (req, res) => {
