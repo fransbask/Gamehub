@@ -18,17 +18,19 @@
   </div>
   <h1>Kirjoitukset</h1>
   <div class="row">
-    <% posts.forEach(post => { %>
+    <% posts.sort((a, b) => b.aika - a.aika).forEach(post => { %>
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title"><%= post.otsikko %></h5>
+            <img src="<%= post.kuva %>" alt="<%= post.otsikko %>">
             <p class="card-text"><%= post.kuvaus %></p>
             <a href="/post/<%= post._id %>" class="btn btn-primary">Lue lisää</a>
           </div>
         </div>
       </div>
     <% }) %>
+    
     <!-- <% posts.forEach(post => { %>
     <div class="col-md-4">
       <div class="card mb-4">

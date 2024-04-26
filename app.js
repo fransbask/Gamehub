@@ -101,15 +101,25 @@ function isAuthenticated(req, res, next) {
 }
 
 // Etusivun reitti
+// app.get('/', async (req, res) => {
+//   try {
+//     const posts = await Post.find(); // Hae kaikki postaukset tietokannasta
+//     res.render('index', { title: 'Blogi', posts: posts }); // Lähetä postaukset etusivulle
+//   } catch (error) {
+//     console.error('Virhe haettaessa postauksia:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 app.get('/', async (req, res) => {
   try {
-    const posts = await Post.find(); // Hae kaikki postaukset tietokannasta
+    const posts = await Post.find().sort({ luotu: -1 }); // Hae kaikki postaukset tietokannasta
     res.render('index', { title: 'Blogi', posts: posts }); // Lähetä postaukset etusivulle
   } catch (error) {
     console.error('Virhe haettaessa postauksia:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 // Kirjaudu ulos
 app.get('/logout', (req, res) => {
