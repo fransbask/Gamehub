@@ -1,16 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 body {
-  background-color: white;
-  color: black;
+  font-family: "Lora", serif;
+  background-color: #000000; /* Musta */
+  color: #FFFFFF; /* Valkoinen */
 }
 
 .navbar {
-  background-color: orange;
+  background-color: #FF4500 !important; /* Oranssi */
+  color: #FFFFFF !important; /* Valkoinen */
 }
 
 .nav-link {
-  color: orange;
+  color: #FFFFFF; /* Valkoinen */
 }
 
 .nav-link:hover {
-  color: white;
+  color: #C0C0C0; /* Hopea */
+}
+
+.container {
+  background-color: #808080; /* Harmaa */
+}
+
+.card {
+  background-color: #000000; /* Musta */
+  color: #FFFFFF; /* Valkoinen */
+}
+
+.card:hover {
+  background-color: #FF4500; /* Oranssi */
+  color: #000000; /* Musta */
+}
+
+.btn {
+  background-color: #FF4500; /* Oranssi */
+  color: #000000; /* Musta */
+}
+
+.btn:hover {
+  background-color: #FFFFFF; /* Valkoinen */
+  color: #000000; /* Musta */
+}
+
+.btn:active {
+  background-color: #C0C0C0; /* Hopea */
+  color: #000000; /* Musta */
 }
